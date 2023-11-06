@@ -2,7 +2,7 @@
 
 <p> Esse repositório demonstra os códigos desenvolvidos para finalização do Modulo 03 do curso de Desenvolvimento Back-End pela instituição Cubos Academy. Fomos desafiadas pela Cubos Academy a desenvolver um sistema de gerenciamento financeiro API REST com persistência de dados, criptogragia de senha e geração de token para os usuários logados no sistema 🤯🎯 </p>
 <p>
-<li> Desenvolvemos 12 rotas que buscam realizar operações básicas de um gerenciador financeiro; </li>
+<li> Desenvolvemos 11 rotas que buscam realizar operações básicas de um gerenciador financeiro; </li>
 <li> Criamos três controladores (transações, categorias e usuários) para armazenamento dos códigos das rotas criadas. </li> 
 <li> Criamos sete intermediários para a proteção das rotas criadas. </li> 
 <li> As rotas possuem como tipo de resquisição req.body, req.params, req.headers e/ou req.params; </li>
@@ -82,7 +82,7 @@
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota 05: Listar categorias de transações 🧾💰 </h2>
+<h2> Rota 05: Listar categorias 🛒🍔 </h2>
 <div>
   <h3> GET /categoria </h3>
   <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/eb454e99-481e-4353-848e-f7945f122ea8">
@@ -95,9 +95,9 @@
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota 06: Cadastrar transação ✅💳 </h2>
+<h2> Rota 06: Cadastrar transação ✅🤑 </h2>
 <div>
-  <h3> POST /contas </h3>
+  <h3> POST /transacao </h3>
   <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/aeea8025-7e62-4ca9-8d35-f1d797b6b970">
 </div>
 
@@ -106,12 +106,12 @@
 <li> Cria uma nova transação financeira cujo número (ID) é único; </li>
 <li> Verifica se todos os campos foram informados (todos são obrigatórios); </li>
 <li> Verifica se o ID da transação existe; </li>
-<li> Padroniza a escrita do campo tipo; </li>
+<li> Verifica se o campo tipo possui escrita padronizada; </li>
 <li> Token utilizado como req.headers para validação de acesso. </li>
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota 07: Exibir transações financeiras do usuário logado ✅🧾 </h2>
+<h2> Rota 07: Listar transações ✅🧾 </h2>
 <div>
     <h3> GET /transacao </h3>
   <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/cfbd0d30-f4a7-45a4-91bf-b403cd91c897">
@@ -124,112 +124,60 @@
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Atualizar usuário da conta bancária ✅🔄 </h2>
+<h2> Rota 08: Detalhar transação 🕵🏽‍♀️🧾 </h2>
 <div>
-  <h3> PUT /contas/:numeroConta </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/9fce1a65-72a6-476d-9645-2f61a5356736">
+  <h3> GET /transacao/:id </h3>
+  <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/436610cb-7faa-4661-a0a9-550d8799bb47">
 </div>
 
 <div>
 <h3> O quê essa rota faz? 🤔 </h3>
-<li> Atualiza os dados do usuário de uma conta bancária; </li>
-<li> Verifica se todos os campos foram informados (todos são obrigatórios); </li>
-<li> Verifica se o numero da conta passado como parametro na URL é válida; </li>
-<li> Verifica se o CPF e e-mail já foram vinculados a um outro usuário; </li>
+<li> Detalha uma transação financeira do usuário logado; </li>
+<li> Verifica se o ID da transação financeira existe; </li>
+<li> Não permite o acesso a outras transações financeiras que não sejam do usuário logado; </li>
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Excluir conta 🗑💰 </h2>
+<h2> Rota 09: Obter Extrato 🤑💲 </h2>
 <div>
-  <h3> DELETE /contas/:numeroConta </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/56e5f342-669b-4ef0-ab3e-3dcb871ae526">
+  <h3> GET /transacao/extrato </h3>
+  <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/d0c8db7b-dbff-47be-aa94-5bf545647d32">
 </div>
 
 <div>
 <h3> O quê essa rota faz? 🤔 </h3>
-<li>Verifica se o numero da conta passado como parametro na URL é válido; </li>
-<li>Permite apenas a exclução da conta bancária se o saldo for R$0,00; </li>
-<li>Exclui a conta do objeto. </li>
+<li> Exibe o extrato das transações financeiras o usuário (entradas e saidas); </li>
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Depositar 💰🤑 </h2>
+<h2> Rota 10: Atualizar Transação 🔄💰 </h2>
 <div>
-  <h3> POST /transacoes/depositar </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/3c70ae5d-4463-430c-82b4-3cffaf5d174d">
+  <h3> PUT /transacao/:id </h3>
+  <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/04ba8f15-1aae-47dc-99df-dd38e8d8cf00">
 </div>
 
 <div>
 <h3> O quê essa rota faz? 🤔 </h3>
-<li> Verifica se o numero da conta e o valor do deposito foram informados no body; </li>
-<li> Verifica se a conta bancária informada existe; </li>
-<li> Não permite depósitos com valores negativos ou zerados; </li>
-<li> Soma o valor de depósito ao saldo da conta; </li>
+<li> Verifica a existência da transação pelo ID de transação; </li>
+<li> Verifica o vinculo da transação com o usuário logado; </li>
+<li> Verifica se todos os campos req.body foram totalmente preenchidos; </li>
+<li> Verifica se a categoria informada existe; </li>
+<li> Verifica se o campo tipo possui escrita padronizada; </li>
+<li> Atualiza uma transação financeira do usuário. </li>
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Sacar 💸🤑 </h2>
+<h2> Rota 11: Excluir Transação 🗑💰 </h2>
 <div>
-  <h3> POST /transacoes/sacar </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/274a0df8-59a3-459c-98f1-4c0959951efa">
+  <h3> DELETE /transacao/:id </h3>
+  <img src = "https://github.com/taiscostaeng/sistema-gerenciador-financeiro-api-rest/assets/138815703/448fd394-a3e8-48ee-9bf0-2788f8cbb4d2">
 </div>
 
 <div>
 <h3> O quê essa rota faz? 🤔 </h3>
-<li> Verifica se o numero da conta, o valor do saque e a senha foram informados no body; </li>
-<li> Verifica se a conta bancária informada existe; </li>
-<li> Verifica se a senha informada é uma senha válida para a conta informada; </li>
-<li> Verifica se há saldo disponível para saque; </li>
-<li> Subtrai o valor sacado do saldo da conta encontrada; </li>
-</div>
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Saldo 💲🤑 </h2>
-<div>
-  <h3> GET /contas/saldo </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/a191b84e-7858-403b-960f-e1c5d6ebb121">
-</div>
-
-<div>
-<h3> O quê essa rota faz? 🤔 </h3>
-<li> Verifica se o numero da conta e a senha foram informadas (passado como query params na url); </li>
-<li> Verifica se a conta bancária informada existe; </li>
-<li> Verifica se a senha informada é uma senha válida; </li>
-<li> Exibe o saldo da conta bancária em questão. </li>
-</div>
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Extrato Bancário 🧾💲 </h2>
-<div>
-  <h3> GET /contas/extrato </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/a7679425-0bca-459e-8bda-8c15f555a8f2">
-</div>
-
-<div>
-<h3> O quê essa rota faz? 🤔 </h3>
-<li> Verifica se o numero da conta e a senha foram informadas (passado como query params na url); </li>
-<li> Verifica se a conta bancária informada existe; </li>
-<li> Verifica se a senha informada é uma senha válida; </li>
-<li> Retorna a lista de transferências, depósitos e saques da conta em questão.</li>
-</div>
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<h2> Rota XX: Transferência entre Contas 💰🤑 </h2>
-
-<div>
-  <h3> POST /transacoes/transferir </h3>
-  <img src = "https://github.com/taiscostaeng/sistema-bancario-api-rest/assets/138815703/dd402811-2d62-4f3f-bf9c-02d099289817">
-</div>
-
-<div>
-<h3> O quê essa rota faz? 🤔 </h3>
-<li> Verifica se o número da conta de origem, de destino, senha da conta de origem e valor da transferência foram informados no body; </li>
-<li> Verifica se a conta bancária de origem informada existe; </li>
-<li> Verifica se a conta bancária de destino informada existe; </li>
-<li> Verifica se a senha informada é uma senha válida para a conta de origem informada; </li>
-<li> Verifica se há saldo disponível na conta de origem para a transferência; </li>
-<li> Subtrai o valor da transfência do saldo na conta de origem; </li>
-<li> Soma o valor da transferência no saldo da conta de destino. </li>
+<li> Verifica a existência da transação pelo ID de transação; </li>
+<li> Verifica o vinculo da transação com o usuário logado; </li>
+<li> Exclui a transação financeira. </li>
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -241,15 +189,17 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <h2> 🎖🏆 Funcionalidades do Projeto </h2>
-Esse projeto foi desenvolvido para executar as funções básicas de um sistema bancário:
+Esse projeto foi desenvolvido para executar as funções básicas de um sistema de gerenciamento financeiro:
 <ol>
-  <li> Criar conta bancária </li>
-  <li> Listar todas contas bancárias cadastradas </li>
-  <li> Atualizar usuário </li>
-  <li> Deletar conta </li>
-  <li> Realizar depóstio </li>
-  <li> Realizar saque </li>
-  <li> Consultar saldo </li>
-  <li> Consultar extrato bancário </li>
-  <li> Realizar transferências entre contas bancárias </li>
+  <li> Cadastrar Usuário </li>
+  <li> Realizar Login </li>
+  <li> Detalhar Usuário </li>
+  <li> Atualizar Usuário </li>
+  <li> Listar Categorias </li>
+  <li> Cadastrar Transação </li>
+  <li> Listar Transações </li>
+  <li> Detalhar Transação </li>
+  <li> Obter Extrato </li>
+  <li> Atualizar Transação </li>
+  <li> Excluir Transação </li>
 </ol>
