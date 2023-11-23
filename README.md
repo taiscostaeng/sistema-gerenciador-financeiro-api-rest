@@ -181,6 +181,13 @@
 </div>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<h2> ✨👩🏽‍💻 Como realizar a execução desse projeto? </h2>
+<li> Primeiro, você precisa realizar o clone desse projeto; </li>
+<li> Em seguida, você deve acessar a do projeto no terminal cd sistema-gerenciador-financeiro-api-rest </li>
+<li> Instale as bibliotecas necessárias utilizando o comando npm i </li>
+<li> Execute a aplicação em modo de desenvolvimento npm run dev </li>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <h2> ✨😊 Você quer contribuir com esse projeto? </h2>
 <li> Primeiro, você precisa realizar o clone desse projeto; </li>
 <li> Em seguida, você deve acessar a do projeto no terminal cd sistema-gerenciador-financeiro-api-rest </li>
